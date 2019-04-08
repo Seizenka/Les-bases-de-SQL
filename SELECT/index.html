@@ -69,15 +69,15 @@
 
             <h2>Drill 3</h2>
                 <ul>
-                    <li>Affiche le prénom et nom de tous les octocats, par ordre alphabétique ascendant du prénom.</li>
-                   <li> Affiche le prénom et nom de tous les octocats, par ordre alphabétique descendant du nom de famille.</li>
-                    <li>Affiche le prénom, nom et âge de tous les octocats, du plus jeune au plus âgé.</li>
-                    <li>Affiche le prénom, nom et âge de tous les octocats, du plus âgé au plus jeune.</li>
-                    <li>Affiche le prénom, nom et âge de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central".</li>
-                    <li>Affiche le prénom, nom et âge de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central" et dont l'âge se situe entre 23 et 28 ans.</li>
-                    <li>Affiche le prénom, nom, âge et genre de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central" et dont l'âge se situe entre 25 et 35 ans.</li>
-                    <li>Affiche le prénom, nom, âge et genre de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central", dont l'âge se situe entre 25 et 35 ans et dont le genre est masculin.</li>
-                    <li>Affiche le prénom, nom, âge de l'octocat le plus âgé de Becode/Central. Donc tu dois obtenir un tableau avec une seule rangée.</li>
+                    <li>Affiche le prénom et nom de tous les octocats, par ordre alphabétique ascendant du prénom : <b>SELECT firstname, lastname FROM octocats ORDER BY firstname ASC;</b></li>
+                    <li> Affiche le prénom et nom de tous les octocats, par ordre alphabétique descendant du nom de famille : <b>SELECT firstname, lastname FROM octocats ORDER BY lastname DESC;</b></li>
+                     <li>Affiche le prénom, nom et âge de tous les octocats, du plus jeune au plus âgé : <b>SELECT firstname, lastname, birthdate FROM octocats ORDER BY birthdate ASC;</b></li>
+                     <li>Affiche le prénom, nom et âge de tous les octocats, du plus âgé au plus jeune : <b>SELECT firstname, lastname, birthdate FROM octocats ORDER BY birthdate ASC;</b></li>
+                     <li>Affiche le prénom, nom et âge de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central" : <b>SELECT firstname, lastname, birthdate FROM octocats WHERE promo='promo1-central' ORDER BY birthdate ASC;</b></li>
+                     <li>Affiche le prénom, nom et âge de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central" et dont l'âge se situe entre 23 et 28 ans : <b>SELECT firstname, lastname, age FROM octocats WHERE promo='promo1-central' AND age BETWEEN 23 AND 28 ORDER BY age ASC;</b></li>
+                     <li>Affiche le prénom, nom, âge et genre de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central" et dont l'âge se situe entre 25 et 35 ans : <b>SELECT firstname, lastname, age FROM octocats WHERE promo='promo1-central' AND age BETWEEN 23 AND 35 ORDER BY age ASC;</b></li>
+                     <li>Affiche le prénom, nom, âge et genre de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central", dont l'âge se situe entre 25 et 35 ans et dont le genre est masculin : <b>SELECT firstname, lastname, age FROM octocats WHERE promo='promo1-central' AND age BETWEEN 23 AND 35 AND gender='M' ORDER BY age ASC;</b></li>
+                     <li>Affiche le prénom, nom, âge de l'octocat le plus âgé de Becode/Central. Donc tu dois obtenir un tableau avec une seule rangée : <b>SELECT firstname, lastname, age FROM octocats WHERE promo='promo1-central' AND age >=49 AND gender='M';</b></li>
                 </ul>
 </body>
 </html>
