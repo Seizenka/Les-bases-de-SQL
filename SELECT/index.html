@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Drill 1, 2 et 3 Les exercices du bac à sable</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Exercices de SELECT</h1>
+            <h2>Drill 1</h2>
+
+            <p>Rends-toi sur notre premier bac à sable d'apprentissage.<p></p>
+
+            Utilise la zone éditable à droite pour écrire tes premières requêtes SQL.<p></p>
+
+            Trouve la syntaxe pour effectuer chacune des requêtes suivantes (lis bien la formulation, chaque mot a son importance!). Vérifie<p></p>
+
+            Retourne un tableau contenant</p>
+                <ul>
+                    <li>uniquement les villes : SELECT ville FROM Météo;</li>
+                    <li>toutes les villes et leur température maximum : <b>SELECT ville, haut FROM Météo</b>;</li>
+                    <li>toutes les villes et leur température minimum : <b>SELECT ville, bas FROM Météo</b>;</li>
+                    <li>Là où les villes dont la température maximale dépasse 27 degrés : <b>SELECT ville, haut FROM Météo WHERE haut > 27</b>;</li>
+                    <li>Là où les villes dont la température minimale sera inférieure ou égale à 15 degrés : <b>SELECT ville, bas FROM Météo WHERE bas < 15</b>;</li>
+                    <li>Là où les villes dont la température minimale sera égale à 15 degrés : <b>SELECT ville, bas FROM Météo WHERE bas = 15</b>;</li>
+                    <li>Là où les villes dont la température minimale ne sera PAS égale à 15 degrés : <b>SELECT ville, bas FROM Météo WHERE bas <> 15</b>;</li>
+                    <li>Là où les villes dont le nom commence par "Br" : <b>SELECT ville FROM Météo WHERE ville LIKE 'Br%'</b> ;</li>
+                    <li>Là où les villes dont la température maximale se situe entre 26 et 28 degrés : <b>SELECT ville, haut FROM Météo WHERE haut >= 26</b> ;</li>
+                    <li>Là où les villes dont la température minimale est égale à 14 ou est égale à 16 degrés : <b>SELECT ville, bas FROM Météo WHERE bas <= 16</b> ;</li>
+                    <li>Là où les villes dont la température maximale est supérieure ou égale à 26 et la température minimale est inférieure à 14 : <b>SELECT ville, bas, haut FROM Météo WHERE bas < 14 AND haut >= 26</b>;</li>
+
+            <h4>Fait? Tu as tout réussi? Alors passe à notre second Drill.</h4>
+        <h2>Drill 2</h2>
+
+            <p>Rends-toi sur le second bac à sable d'apprentissage.</p><p></p>
+
+            <p>Familiarise toi d'abord avec cette table. Que contient-elle? quelles sont les colonnes? Ensuite, même principe que ci-dessus:</p><p></p>
+
+            <p>Trouve la syntaxe pour effectuer chacune des requêtes suivantes:</p><p></p>
+
+               <ul> 
+                    <li>Affiche tous les octocats et leurs données : <b>SELECT * FROM octocats</b></li>
+                    <li>Affiche uniquement les prénoms : <b>SELECT firstname FROM octocats</b></li>
+                    <li>Affiche les prénoms, noms et age de chaque octocat : <b>SELECT firstname, lastname, age FROM octocats</b></li>
+                    <li>Affiche les octocats dont le nom commence par 'N' : <b>SELECT lastname FROM octocats WHERE lastname LIKE 'N%';</b></li>
+                    <li>Affiche le prénom et le nom des octocats de la promo "promo1-central" : <b>SELECT lastname, firstname FROM octocats WHERE promo='promo1-central';</b></li>
+                    <li>Affiche le prénom, le nom et l'année de naissance des octocats de la promo "promo1-anderlecht" : <b>SELECT lastname, firstname, birthdate FROM octocats WHERE promo='promo1-anderlecht';</b></li>
+                </ul><p></p>
+            
+            <b>TRIER : ORDER BY</b>
+
+            <p>Tu peux demander à MySQL de trier les résultats selon un ordre que tu définis. Pour cela, ajoute à la fin de ta requête: ORDER BY suivi de la colonne à utiliser pour le tri, suivi soit de ASC ("ascending order", de A à Z par exemple ou de la moins grande valeur à la plus grande valeur) ou de DESC ("descending order", de Z à A).</p><p></p>
+
+            <p>Ex:</p>
+
+            <p>SELECT ville FROM météo ORDER BY ville ASC;</p>
+
+            <p>LIMITER LE NOMBRE DE RÉSULTATS</p>
+
+            <p>Tu peux dire à SQL de limiter le nombre de résultats, en ajoutant le mot-clef LIMITsuivi de la rangée de départ (on commence à 0) puis une virgule, puis le nombre de rangées à garder.</p>
+
+            <p>Par exemple, pour ne garder que la rangée du dessus, on ajoute LIMIT 0,1 à la requête:</p>
+
+            <p>SELECT ville FROM météo ORDER BY ville ASC LIMIT 0,1 ;</p>
+
+            <h2>Drill 3</h2>
+                <ul>
+                    <li>Affiche le prénom et nom de tous les octocats, par ordre alphabétique ascendant du prénom.</li>
+                   <li> Affiche le prénom et nom de tous les octocats, par ordre alphabétique descendant du nom de famille.</li>
+                    <li>Affiche le prénom, nom et âge de tous les octocats, du plus jeune au plus âgé.</li>
+                    <li>Affiche le prénom, nom et âge de tous les octocats, du plus âgé au plus jeune.</li>
+                    <li>Affiche le prénom, nom et âge de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central".</li>
+                    <li>Affiche le prénom, nom et âge de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central" et dont l'âge se situe entre 23 et 28 ans.</li>
+                    <li>Affiche le prénom, nom, âge et genre de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central" et dont l'âge se situe entre 25 et 35 ans.</li>
+                    <li>Affiche le prénom, nom, âge et genre de tous les octocats, du plus jeune au plus âgé, de la promo "promo1-central", dont l'âge se situe entre 25 et 35 ans et dont le genre est masculin.</li>
+                    <li>Affiche le prénom, nom, âge de l'octocat le plus âgé de Becode/Central. Donc tu dois obtenir un tableau avec une seule rangée.</li>
+                </ul>
+</body>
+</html>
