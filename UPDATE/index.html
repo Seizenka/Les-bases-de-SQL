@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Drill Les exercices UPDATE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Exercice INSERT INTO</h1>
+    <p>UPDATE te permet de mettre à jour une ou plusieurs rangées correspondant à une condition (clause WHERE).</p>
+    <p>UPDATE nom_de_la_table<p></p>
+        SET nom_de_colonne = "nouvelle valeur"<p></p>
+        WHERE nom_de_colonne OPERATEUR "valeur"<p></p>
+            [and|or nom_de_colonne OPERATEUR "value"];<p></p>
+        
+        [ ] = optionnel</p>
+
+        <p>Exemple sur PHPmyadmin -> la base de données <b>mydata</b></p><p></p>
+        <p>La table personnes a été changé :</p><p></p>
+        <p>"Tim" est passé à "Thomas" avec cette commande : <b>UPDATE personnes SET name="Thoma" WHERE name="Tim";</b></p>
+</body>
+</html>
