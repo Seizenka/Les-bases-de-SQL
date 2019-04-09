@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Drill Les exercices INSERT TO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Exercice INSERT INTO</h1>
+    <p>Exerce-toi sur le bac à sable d'apprentissage. Utilise le champ éditable de gauche (celui de droite ne permet que les SELECT).</p>
+
+    <p>Ajoute ensuite ta ville natale et ses températures min et max. Tape à chaque fois la commande (pas de copier/coller), pour que la syntaxe rentre dans tes doigts.</p>
+
+    <p>Il n'y a rien d'autre de spécial à savoir à ce sujet et tu peux passer au sujet suivant.</p>
+
+    <q>
+        CREATE TABLE Météo<p></p>
+        (`ville` varchar(9), `haut` int, `bas` int)<p></p>
+        ;<p></p>
+
+        INSERT INTO Météo<p></p>
+        (ville, haut, bas)<p></p>
+        VALUE<p></p>
+        ('Gosselies', 25, 9),<p></p>
+        ('Charleroi', 27, 14);<p></p>
+
+        <b>Réponse sur le champ éditable :</b> <p></p>
+        SELECT ville FROM Météo WHERE ville='Charleroi';
+
+    </q>
+</body>
+</html>
