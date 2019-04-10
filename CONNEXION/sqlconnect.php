@@ -10,6 +10,9 @@
             die('Erreur : '.$e->getMessage());
     }
 
+    // Si tout va bien, on peut continuer
+
+
 ?>
 
 <!-- Notes pour se connecter à MySQL avec PDO :
