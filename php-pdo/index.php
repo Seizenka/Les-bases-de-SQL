@@ -14,13 +14,14 @@ catch (Exception $e){
     //Parcourir le tableau
     foreach($affiche as $component){
         echo '<tr>';
-        echo '<td><input type="checkbox">'.$component["ville"].'</td>'; 
+        echo '<td><input name="check[]" type="checkbox" value="'.$component['id'].'">'.$component["ville"].'</td>'; //check[] parce qu'on peut check plusieurs en même temps
         echo '<td>'.$component["haut"].'</td>';
         echo '<td>'.$component["bas"].'</td>';
         echo '</tr>';
     }
-    echo '</table>';
-    echo '<input type="submit" value="supprimer" name="supprimer">';
+    echo '</table><p></p>';
+    
+    
     }
     //Nettoyer les champs
     $sanitisation = array (
@@ -39,6 +40,16 @@ catch (Exception $e){
         $haut=$_POST['haut'];
         $bas=$_POST['bas'];
         $insertion = $bdd->exec("INSERT INTO Météo(ville, haut, bas) VALUES ('$ville', '$haut', '$bas')");
+        header("location:index.php");//raffraîchir la page juste en faisant F5
+    }
+    //Supprimer des données
+    if(isset($_POST['supprimer'])){
+        $check = $_POST['check']; //Nouvelle variable
+        $delete = $bdd->prepare("DELETE from Météo WHERE id= :id");//prepare : préparer uen requête -------Les deux points représentent une autre variables
+        foreach ($check as $id){
+            $delete->execute(array(":id"=> $id));
+        }
+        header("location:index.php");
     }
 
 
@@ -54,7 +65,13 @@ catch (Exception $e){
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
 <body>
+
+    
+    <form action="#" method="POST">
     <?php afficher()?> <!-- On rappelle la fonction -->
+        <input type="submit" value="supprimer" name="supprimer"><p></p>
+    </form>
+
     <form action="#" method="POST">
         <label for="ville">Ville</label>
         <input name="ville" type="text"required>
